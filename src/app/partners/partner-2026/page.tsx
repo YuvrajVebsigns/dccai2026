@@ -3,34 +3,26 @@ export default function Partner2026Page() {
     {
       title: 'Premium Partners',
       logos: [
-        '/assets/partner2026/partner_logo_1.png',
-        '/assets/partner2026/partner_logo_2.png',
-        '/assets/partner2026/partner_logo_3.png',
-        '/assets/partner2026/partner_logo_4.png',
-        '/assets/partner2026/partner_logo_5.png',
-        '/assets/partner2026/partner_logo_6.png',
-        '/assets/partner2026/partner_logo_7.png',
-        '/assets/partner2026/partner_logo_8.png',
-        '/assets/partner2026/partner_logo_9.png',
+        '/assets/partner2026/premiumpartner_logo_1.png',
+        '/assets/partner2026/premiumpartner_logo_2.png',
+        '/assets/partner2026/premiumpartner_logo_3.png',
+        '/assets/partner2026/premiumpartner_logo_4.png',
+        '/assets/partner2026/premiumpartner_logo_5.png',
       ],
     },
+    {
+      title: 'Elite Partners',
+      logos: ['/assets/partner2026/elite_logo_1.png'],
+    },
+
     {
       title: 'Associate Partners',
       logos: [
         '/assets/partner2026/Associate_Partners_1.png',
         '/assets/partner2026/Associate_Partners_2.png',
-        '/assets/partner2026/Associate_Partners_3.png',
-        '/assets/partner2026/Associate_Partners_4.png',
-        '/assets/partner2026/Associate_Partners_5.png',
-        '/assets/partner2026/Associate_Partners_6.png',
-        '/assets/partner2026/Associate_Partners_7.png',
-        '/assets/partner2026/Associate_Partners_8.png',
       ],
     },
-    {
-      title: 'Category Partner',
-      logos: ['/assets/partner2026/category_partner.png'],
-    },
+
     {
       title: 'Partners',
       logos: [
@@ -38,6 +30,11 @@ export default function Partner2026Page() {
         '/assets/partner2026/partner_logo_2.png',
         '/assets/partner2026/partner_logo_3.png',
       ],
+    },
+
+    {
+      title: 'Knowledge Partner',
+      logos: ['/assets/partner2026/knowledgepartner_logo_1.png'],
     },
   ];
 
@@ -52,10 +49,10 @@ export default function Partner2026Page() {
               Celebrating Our <span>Valued Partners</span>
             </h1>
 
-            <p className="partner2026-description">
+            {/* <p className="partner2026-description">
               We proudly collaborate with leading brands and technology partners who support CIO
               Power List 2026 and strengthen India&apos;s enterprise technology ecosystem.
-            </p>
+            </p> */}
           </div>
 
           {partnerGroups.map((group) => (

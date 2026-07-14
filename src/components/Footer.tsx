@@ -16,7 +16,7 @@ export default function Footer() {
             <div className="footer-widget footer-brand">
               <Link href="/" className="footer-logo">
                 <Image
-                  src="/assets/logo/Headingg.png"
+                  src="/assets/logo/DCCAI-Logo-Black.webp"
                   alt="Core Media"
                   width={180}
                   height={70}
@@ -43,7 +43,7 @@ export default function Footer() {
                   <Link href="/events">Events</Link>
                 </li>
                 <li>
-                  <Link href="/CXOUnfiltered">CXO Unfiltered</Link>
+                  <Link href="/#contact-section">Contact Us</Link>
                 </li>
               </ul>
             </div>
@@ -54,16 +54,16 @@ export default function Footer() {
 
               <ul className="footer-links">
                 <li>
-                  <Link href="/#contact-section">Contact Us</Link>
+                  <Link href="/register">Registration</Link>
                 </li>
 
                 <li>
-                  <Link href="/join-the-community/cxo-connect">CXO Connect</Link>
+                  <Link href="/nominate">Nomination</Link>
                 </li>
 
-                {/* <li>
-                  <Link href="/nominate">Nominate</Link>
-                </li> */}
+                <li>
+                  <Link href="//speaker">Speaker</Link>
+                </li>
               </ul>
             </div>
 

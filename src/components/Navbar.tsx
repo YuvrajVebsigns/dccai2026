@@ -190,7 +190,13 @@ export default function Navbar() {
     >
       <div className="navbar-container">
         <Link href="/" className="navbar-logo" onClick={closeAllMenus}>
-          <Image src="/assets/logo/logo2.png" alt="CORE Media" width={150} height={100} priority />
+          <Image
+            src="/assets/logo/DCCAI-Logo-Black.webp"
+            alt="CORE Media"
+            width={150}
+            height={100}
+            priority
+          />
         </Link>
 
         <nav className={`navbar-menu ${mobileOpen ? 'open' : ''}`}>
