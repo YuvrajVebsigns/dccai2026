@@ -57,13 +57,13 @@ const evaluationSteps = [
 ];
 
 const eligibilityCriteria = [
-  'A resident of India at the time of application.',
-  'Applicants reporting directly to the CIO, CDO, ICT Leader, or senior-most ICT decision-maker of the organization can apply.',
-  'A minimum of 10 years of full-time work experience.',
-  'Only one application per applicant is permissible.',
-  'The applicant must currently be employed within a company or organization. Self-employment is not eligible.',
-  'Valid documentation of current work experience and personal details is required.',
-  'Permission from the current employer organization is required to participate in the LeaderNext Awards 2026.',
+  'Applicants must be residents of India at the time of submitting their application for the LeaderNext Awards 2026.',
+  'Applicants should report directly to the CIO, CDO, ICT Leader, or the senior-most technology decision-maker within their organization.',
+  'A minimum of 10 years of full-time professional work experience is required in the information technology or digital domain.',
+  'Only one application per individual is permitted. Multiple entries submitted by the same applicant will not be considered.',
+  'Applicants must currently be employed by a registered company or organization. Self-employed professionals and consultants are not eligible.',
+  'Applicants must provide valid supporting documents verifying their current employment, work experience, and personal information during the application process.',
+  'Written approval or formal permission from the applicant’s current employer is required to participate in the LeaderNext Awards 2026 program.',
 ];
 
 // const processHighlights = [

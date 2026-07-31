@@ -816,11 +816,11 @@ main {
 }
 
 .navbar-hide {
-  transform: translate3d(0, -110%, 0);
+  transform: none !important;
 }
 
 .navbar-show {
-  transform: translate3d(0, 0, 0);
+  transform: none !important;
 }
 
 .navbar.scrolled,
@@ -2289,7 +2289,7 @@ main.advisory-page .pagination-pages {
   position: absolute;
   top: 0;
   left: 0;
-  width: 42%;
+  width: 50%;
   height: 100%;
   background: #8e0101;
   clip-path: polygon(0 0, 78% 0, 100% 100%, 0 100%);
@@ -2310,12 +2310,12 @@ main.advisory-page .pagination-pages {
 .founder-message-container {
   position: relative;
   z-index: 2;
-  max-width: 1240px;
+  max-width: 1260px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 420px minmax(0, 1fr);
-  align-items: center;
-  gap: 80px;
+  grid-template-columns: 500px minmax(0, 1fr);
+  align-items: start; /* Image and content start from the top */
+  gap: 85px;
 }
 
 /* =========================================================
@@ -2324,21 +2324,26 @@ main.advisory-page .pagination-pages {
 
 .founder-image-wrapper {
   position: relative;
+  margin-top: 50px;
   display: flex;
   justify-content: center;
-  padding: 28px 0;
+  align-items: flex-start;
+  align-self: flex-start;
+  min-height: 590px;
+  padding-top: 0;
 }
 
 .founder-image-wrapper::before {
   content: '';
   position: absolute;
-  top: 4px;
+  top: -16px;
   left: 34px;
   width: 290px;
   height: 390px;
   border: 2px solid rgba(255, 255, 255, 0.45);
   border-radius: 30px;
   transform: rotate(-7deg);
+  z-index: 1;
 }
 
 .founder-image-wrapper::after {
@@ -2370,10 +2375,12 @@ main.advisory-page .pagination-pages {
 .founder-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center top;
   display: block;
+  object-fit: cover;
+  object-position: center top; /* Keeps the top of the image visible */
+
   border-radius: 23px;
+  transform: translateY(-8px); /* Move image slightly upward */
 }
 
 /* =========================================================
@@ -5637,10 +5644,10 @@ main.advisory-page .pagination-pages {
 .blog-breadcrumb a,
 .blog-breadcrumb p {
   margin: 0;
-  color: white;
+  color: rgb(240, 235, 235);
   text-decoration: none;
-  font-size: 11px;
-  font-weight: 700;
+  font-size: 25px;
+  font-weight: 540;
 }
 
 .blog-breadcrumb-home {
@@ -13875,7 +13882,7 @@ s .dialogues-badge-mark {
 .ln-eligibility-card {
   position: relative;
   min-height: 190px;
-  padding: 28px 25px 27px;
+  padding: 14px 14px 14px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.97);
   border: 1px solid rgba(255, 255, 255, 0.28);

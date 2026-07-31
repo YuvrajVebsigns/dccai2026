@@ -1,22 +1,20 @@
 import { MapPin, Navigation, Phone } from 'lucide-react';
 
 const venueDetails = {
-  name: 'ITC Maratha',
+  name: 'DCCAI',
   address:
-    'Chhatrapati Shivaji Maharaj Int’l Airport Rd, near International Airport, Ashok Nagar, Andheri East, Mumbai, Maharashtra 400099',
-  phone: '+91 22 2830 3030',
+    'Units Nos. 3037 – A1 Wing, 3rd Floor, Oberoi Garden Estate, Near Chandivali Studio, Andheri (East), Mumbai – 400072, INDIA',
+  phone: '+91 22 4608 0974',
   mapQuery:
-    'ITC Maratha, Chhatrapati Shivaji Maharaj International Airport Road, Andheri East, Mumbai',
+    'Units Nos. 3037 – A1 Wing, 3rd Floor, Oberoi Garden Estate, Near Chandivali Studio, Andheri (East), Mumbai – 400072, INDIA',
 };
 
 export default function VenuePage() {
-  const googleMapUrl = `https://www.google.com/maps?q=${encodeURIComponent(
-    venueDetails.mapQuery,
-  )}&output=embed`;
+  const googleMapUrl =
+    'https://www.google.com/maps?q=A1+Wing,+3rd+Floor,+Oberoi+Garden+Estate,+Near+Chandivali+Studio,+Andheri+East,+Mumbai+400072,+India&output=embed';
 
-  const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
-    venueDetails.mapQuery,
-  )}`;
+  const directionsUrl =
+    'https://www.google.com/maps/dir/?api=1&destination=A1+Wing,+3rd+Floor,+Oberoi+Garden+Estate,+Near+Chandivali+Studio,+Andheri+East,+Mumbai+400072,+India';
 
   return (
     <main className="venue-page">
