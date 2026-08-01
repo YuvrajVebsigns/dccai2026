@@ -15817,6 +15817,8 @@ s .dialogues-badge-mark {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  margin-top: 100000000px;
+  margin-bottom: -240px;
   flex-shrink: 0;
   gap: 9px;
   min-height: 44px;
