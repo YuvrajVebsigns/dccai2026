@@ -165,30 +165,117 @@ export default function SpeakersPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  // useEffect(() => {
+  //   let active = true;
+
+  //   async function loadPage() {
+  //     try {
+  //       const response = await fetchWebsitePageBySlug('speaker');
+
+  //       if (!response.success) {
+  //         throw new Error(response.message || 'Unable to load speaker page');
+  //       }
+
+  //       if (!active) return;
+
+  //       setPage(response.data);
+  //       setSpeakerGroups(buildSpeakerGroups(response.data));
+  //     } catch (err) {
+  //       if (!active) return;
+  //       setError(err instanceof Error ? err.message : 'Unable to load speaker page');
+  //     } finally {
+  //       if (active) setLoading(false);
+  //     }
+  //   }
+
+  //   loadPage();
+
+  //   return () => {
+  //     active = false;
+  //   };
+  // }, []);
+
   useEffect(() => {
     let active = true;
 
-    async function loadPage() {
+    async function loadPages() {
       try {
-        const response = await fetchWebsitePageBySlug('speaker');
+        const responses = await Promise.all([
+          fetchWebsitePageBySlug('keynote-speakers'),
+          fetchWebsitePageBySlug('speaker'),
+          fetchWebsitePageBySlug('partner-speakers'),
+        ]);
 
-        if (!response.success) {
-          throw new Error(response.message || 'Unable to load speaker page');
+        if (!active) return;
+
+        const validPages: WebsitePage[] = responses
+          .filter(
+            (
+              response,
+            ): response is typeof response & {
+              success: true;
+              data: WebsitePage;
+            } => response.success && !!response.data,
+          )
+          .map((response) => response.data);
+
+        if (!validPages.length) {
+          throw new Error('Unable to load speaker pages');
         }
 
-        if (!active) return;
+        setPage(validPages[0]!);
 
-        setPage(response.data);
-        setSpeakerGroups(buildSpeakerGroups(response.data));
+        // const mergedGroups: SpeakerGroup[] = [];
+
+        // validPages.forEach((pageData) => {
+        //   const groups = buildSpeakerGroups(pageData);
+
+        //   groups.forEach((group) => {
+        //     mergedGroups.push({
+        //       title: pageData.title || group.title,
+        //       description: pageData.shortDescription || group.description,
+        //       speakers: group.speakers,
+        //     });
+        //   });
+        // });
+
+        // setSpeakerGroups(mergedGroups);
+
+        const keynotePage = validPages.find((page) => page.slug === 'keynote-speakers');
+
+        const speakerPage = validPages.find((page) => page.slug === 'speaker');
+
+        const partnerPage = validPages.find((page) => page.slug === 'partner-speakers');
+
+        const orderedGroups: SpeakerGroup[] = [];
+
+        [keynotePage, speakerPage, partnerPage].forEach((pageData) => {
+          if (!pageData) return;
+
+          const groups = buildSpeakerGroups(pageData);
+
+          groups.forEach((group) => {
+            orderedGroups.push({
+              title: pageData.title || group.title,
+              description: pageData.shortDescription || group.description,
+              speakers: group.speakers,
+            });
+          });
+        });
+
+        setSpeakerGroups(orderedGroups);
       } catch (err) {
         if (!active) return;
-        setError(err instanceof Error ? err.message : 'Unable to load speaker page');
+
+        setError(err instanceof Error ? err.message : 'Unable to load speaker pages');
       } finally {
-        if (active) setLoading(false);
+        if (active) {
+          setLoading(false);
+        }
       }
     }
 
-    loadPage();
+    loadPages();
 
     return () => {
       active = false;
@@ -224,8 +311,12 @@ export default function SpeakersPage() {
       <section className="speakers-section">
         <div className="speakers-container">
           <header className="speakers-heading">
-            <h1 className="speakers-title">
+            {/* <h1 className="speakers-title">
               <span>{page?.title || 'Speakers'}</span>
+            </h1> */}
+
+            <h1 className="speakers-title">
+              <span>Speakers</span>
             </h1>
             {getString(page?.shortDescription) ? <p>{page?.shortDescription}</p> : null}
           </header>
