@@ -21,6 +21,7 @@ export default function Footer() {
                   width={180}
                   height={70}
                   priority
+                  style={{ width: 'auto', height: 'auto' }}
                 />
               </Link>
 
@@ -62,7 +63,7 @@ export default function Footer() {
                 </li>
 
                 <li>
-                  <Link href="//speaker">Speaker</Link>
+                  <Link href="/speaker">Speaker</Link>
                 </li>
               </ul>
             </div>

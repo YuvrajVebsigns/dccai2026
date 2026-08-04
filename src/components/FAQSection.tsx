@@ -45,7 +45,13 @@ export default function FAQSection() {
           {/* LEFT SIDE */}
           <div className="faq-left" ref={leftRef}>
             <div className="faq-image-wrap">
-              <Image src="/assets/service-1.png" alt="FAQ" fill className="faq-image" />
+              <Image
+                src="/assets/service-1.png"
+                alt="FAQ"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="faq-image"
+              />
 
               <div className="faq-overlay"></div>
 

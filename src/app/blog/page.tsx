@@ -283,6 +283,7 @@ export default function BlogPage() {
             src="/assets/blogs/blog-1.webp"
             alt="Read Blog"
             fill
+            sizes="100vw"
             priority
             className="blog-hero-image"
           />

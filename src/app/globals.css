@@ -2257,6 +2257,7 @@ main.advisory-page .pagination-pages {
 
   .hero-container,
   .hero-image {
+    margin-top: 50px;
     border-radius: 9px;
   }
 
@@ -2325,6 +2326,7 @@ main.advisory-page .pagination-pages {
 .founder-image-wrapper {
   position: relative;
   margin-top: 50px;
+  margin-bottom: -270px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -5173,6 +5175,50 @@ main.advisory-page .pagination-pages {
 
 .contact-btn:hover .contact-btn-icon {
   transform: rotate(45deg);
+}
+
+.contact-popup {
+  position: fixed;
+  margin-top: -20px;
+  top: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 360px;
+  width: auto;
+  padding: 14px 16px;
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.98);
+  color: #7a0d0d;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+}
+
+.contact-popup p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+.contact-popup-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: #a6191b;
+  flex-shrink: 0;
+}
+
+.contact-popup button {
+  margin-left: auto;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
 }
 
 @media (max-width: 992px) {

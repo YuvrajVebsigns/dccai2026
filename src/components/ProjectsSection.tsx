@@ -145,7 +145,13 @@ export default function ProjectsSection() {
                 <Link key={slug} href={`/events/${slug}`}>
                   <div className="project-card" ref={index === 0 ? customLeftRef : customRightRef}>
                     <div className="project-image-wrap">
-                      <Image src={imageSrc} alt={title} fill className="project-image" />
+                      <Image
+                        src={imageSrc}
+                        alt={title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="project-image"
+                      />
                     </div>
 
                     <div className="project-overlay">
