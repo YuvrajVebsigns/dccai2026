@@ -251,6 +251,34 @@ function buildJuryGroups(page: WebsitePage): JuryGroup[] {
   return [];
 }
 
+function JuryMemberImage({ src, alt }: { src?: string; alt: string }) {
+  const fallbackImage = '/assets/team/Anoop-Mathur.png';
+
+  const [imageSrc, setImageSrc] = useState(src || fallbackImage);
+
+  useEffect(() => {
+    setImageSrc(src || fallbackImage);
+  }, [src]);
+
+  return (
+    <Image
+      src={imageSrc}
+      alt={alt}
+      width={420}
+      height={480}
+      className="jury-image"
+      unoptimized={imageSrc.startsWith('http')}
+      priority
+      sizes="(max-width:600px)100vw,(max-width:1024px)50vw,33vw"
+      onError={() => {
+        if (imageSrc !== fallbackImage) {
+          setImageSrc(fallbackImage);
+        }
+      }}
+    />
+  );
+}
+
 export default function JuryPage() {
   const [page, setPage] = useState<WebsitePage | null>(null);
   const [juryGroups, setJuryGroups] = useState<JuryGroup[]>([]);
@@ -320,9 +348,9 @@ export default function JuryPage() {
           <header className="jury-heading">
             <span className="jury-label">{page?.title || 'LeaderNext 2026'}</span>
 
-            <h1 className="jury-title">
+            {/* <h1 className="jury-title">
               <span>{page?.title || 'Meet Our Distinguished Jury Members'}</span>
-            </h1>
+            </h1> */}
 
             {page?.shortDescription ? <p>{page.shortDescription}</p> : null}
           </header>
@@ -332,25 +360,16 @@ export default function JuryPage() {
               <section className="jury-group" key={group.title}>
                 <div className="jury-grid">
                   {group.members.map((member, index) => {
-                    const imageUrl = member.image || '/assets/jury/default.png';
+                    // const imageUrl = member.image || '/assets/jury/default.png';
 
-                    const remote = imageUrl.startsWith('http');
+                    // const remote = imageUrl.startsWith('http');
 
                     return (
                       <article className="jury-card" key={`${group.title}-${member.name}`}>
                         <div className="jury-card-number">{String(index + 1).padStart(2, '0')}</div>
 
                         <div className="jury-image-wrapper">
-                          <Image
-                            src={imageUrl}
-                            alt={member.name}
-                            width={420}
-                            height={480}
-                            className="jury-image"
-                            unoptimized={remote}
-                            priority
-                            sizes="(max-width:600px)100vw,(max-width:1024px)50vw,33vw"
-                          />
+                          <JuryMemberImage src={member.image} alt={member.name} />
                         </div>
 
                         <div className="jury-card-content">

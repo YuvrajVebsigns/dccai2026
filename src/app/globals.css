@@ -2349,7 +2349,7 @@ main.advisory-page .pagination-pages {
 }
 
 .founder-image-wrapper::after {
-  content: 'FOUNDER';
+  content: '';
   position: absolute;
   left: -4px;
   bottom: 16px;
@@ -14274,10 +14274,10 @@ s .dialogues-badge-mark {
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 1240px;
+  max-width: 1500px;
   margin: 0 auto;
+  padding: 0 20px;
 }
-
 /* =========================================================
    HEADING
 ========================================================= */
@@ -14345,8 +14345,8 @@ s .dialogues-badge-mark {
 
 .jury-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
   align-items: stretch;
 }
 
@@ -14406,7 +14406,7 @@ s .dialogues-badge-mark {
 .jury-image-wrapper {
   position: relative;
   width: 100%;
-  height: 380px;
+  height: 300px;
   overflow: hidden;
   background: #eee5e5;
 }
@@ -14473,10 +14473,10 @@ s .dialogues-badge-mark {
 .jury-card-content h2 {
   margin: 0;
   color: #211a1a;
-  font-size: 23px;
-  font-weight: 850;
+  font-size: 20px;
+  font-weight: 800;
   line-height: 1.3;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
 }
 
 .jury-card-line {
@@ -14863,7 +14863,7 @@ s .dialogues-badge-mark {
 .speaker-card {
   position: relative;
   min-width: 0;
-  height: 100%;
+  height: 87%;
   overflow: hidden;
   background: #ffffff;
   border: 1px solid rgba(142, 1, 1, 0.1);
@@ -16098,32 +16098,36 @@ s .dialogues-badge-mark {
 ========================================================= */
 
 @media (max-width: 1050px) {
+  .agenda-section {
+    padding: 50px 20px 80px;
+  }
+
   .agenda-container {
-    max-width: 950px;
+    max-width: 100%;
   }
 
   .agenda-layout {
-    grid-template-columns: 235px minmax(0, 1fr);
-    gap: 26px;
+    grid-template-columns: 230px 1fr;
+    gap: 24px;
   }
 
   .agenda-sidebar-item {
-    padding: 13px 15px;
+    padding: 14px;
   }
 
   .agenda-sidebar-number {
-    flex-basis: 36px;
     width: 36px;
     height: 36px;
+    flex: 0 0 36px;
   }
 
   .agenda-table-header,
   .agenda-table-row {
-    grid-template-columns: 180px minmax(0, 1fr);
+    grid-template-columns: 170px 1fr;
   }
 
   .agenda-details {
-    padding: 22px 24px;
+    padding: 20px;
   }
 }
 
@@ -16132,65 +16136,46 @@ s .dialogues-badge-mark {
 ========================================================= */
 
 @media (max-width: 850px) {
-  .agenda-section {
-    padding: 42px 20px 90px;
-  }
-
-  .agenda-brand-row {
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
-
-  .agenda-event-information {
-    grid-column: 1 / -1;
-    grid-row: 2;
-    min-width: 0;
-  }
-
   .agenda-layout {
-    grid-template-columns: 1fr;
-    gap: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
   }
 
   .agenda-sidebar {
-    position: static;
+    position: relative;
+    top: auto;
+    width: 100%;
   }
 
   .agenda-sidebar-card {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    border-radius: 22px;
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: 20px;
   }
 
   .agenda-sidebar-title {
-    grid-column: 1 / -1;
-    min-height: 60px;
-    padding: 0 21px;
+    grid-column: 1/-1;
   }
 
   .agenda-sidebar-item {
-    min-height: 70px;
-    border-right: 1px solid rgba(142, 1, 1, 0.08);
-    border-bottom: 1px solid rgba(142, 1, 1, 0.08);
+    min-height: 65px;
+    border: 1px solid rgba(142, 1, 1, 0.08);
   }
 
-  .agenda-sidebar-item:nth-last-child(-n + 3) {
-    border-bottom: 0;
-  }
-
-  .agenda-sidebar-item:nth-child(4),
-  .agenda-sidebar-item:nth-child(7) {
-    border-right: 0;
-  }
-
-  .agenda-sidebar-item::after {
-    display: none;
+  .agenda-content {
+    width: 100%;
+    min-width: 0;
   }
 
   .agenda-content-top {
     position: static;
+    margin-bottom: 20px;
     justify-content: flex-end;
-    margin-bottom: 18px;
+  }
+
+  .agenda-download-button {
+    margin: 0;
   }
 }
 
@@ -16200,62 +16185,57 @@ s .dialogues-badge-mark {
 
 @media (max-width: 700px) {
   .agenda-section {
-    padding: 30px 16px 72px;
+    padding: 30px 15px 60px;
   }
 
   .agenda-brand-row {
-    margin-bottom: 34px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
   }
 
-  .agenda-logo-left img {
-    max-width: 145px;
+  .agenda-logo-left,
+  .agenda-logo-right {
+    justify-content: center;
   }
 
-  .agenda-logo-right img {
-    max-width: 105px;
-  }
-
-  .agenda-event-name {
-    font-size: 17px;
+  .agenda-event-information {
+    min-width: 0;
   }
 
   .agenda-heading {
-    margin-bottom: 36px;
+    margin-bottom: 30px;
   }
 
   .agenda-heading h1 {
-    font-size: 38px;
+    font-size: 30px;
+    line-height: 1.2;
   }
 
   .agenda-sidebar-card {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: flex;
+    flex-direction: column;
   }
 
-  .agenda-sidebar-item:nth-last-child(-n + 3) {
+  .agenda-sidebar-item {
+    width: 100%;
+    border-right: none;
     border-bottom: 1px solid rgba(142, 1, 1, 0.08);
   }
 
-  .agenda-sidebar-item:nth-last-child(-n + 2) {
-    border-bottom: 0;
-  }
-
-  .agenda-sidebar-item:nth-child(4),
-  .agenda-sidebar-item:nth-child(7) {
-    border-right: 1px solid rgba(142, 1, 1, 0.08);
-  }
-
-  .agenda-sidebar-item:nth-child(3),
-  .agenda-sidebar-item:nth-child(5),
-  .agenda-sidebar-item:nth-child(7) {
-    border-right: 0;
+  .agenda-sidebar-item:last-child {
+    border-bottom: none;
   }
 
   .agenda-content-top {
-    justify-content: stretch;
+    justify-content: center;
   }
 
   .agenda-download-button {
     width: 100%;
+    margin: 0;
   }
 
   .agenda-table-wrapper {
@@ -16264,6 +16244,23 @@ s .dialogues-badge-mark {
 
   .agenda-mobile-list {
     display: block;
+    width: 100%;
+  }
+
+  .agenda-mobile-card {
+    margin-bottom: 18px;
+  }
+
+  .agenda-mobile-content {
+    padding: 18px;
+  }
+
+  .agenda-mobile-content h2 {
+    font-size: 18px;
+  }
+
+  .agenda-mobile-content p {
+    font-size: 13px;
   }
 }
 
@@ -16272,16 +16269,16 @@ s .dialogues-badge-mark {
 ========================================================= */
 
 @media (max-width: 480px) {
-  .agenda-brand-row {
-    gap: 14px;
+  .agenda-section {
+    padding: 25px 12px 50px;
   }
 
   .agenda-logo-left img {
-    max-width: 118px;
+    max-width: 120px;
   }
 
   .agenda-logo-right img {
-    max-width: 86px;
+    max-width: 90px;
   }
 
   .agenda-event-name {
@@ -16293,38 +16290,31 @@ s .dialogues-badge-mark {
   }
 
   .agenda-heading h1 {
-    font-size: 34px;
-  }
-
-  .agenda-sidebar-card {
-    grid-template-columns: 1fr;
-  }
-
-  .agenda-sidebar-item {
-    min-height: 64px;
-    border-right: 0 !important;
-    border-bottom: 1px solid rgba(142, 1, 1, 0.08) !important;
-  }
-
-  .agenda-sidebar-item:last-child {
-    border-bottom: 0 !important;
+    font-size: 26px;
   }
 
   .agenda-sidebar-number {
-    flex-basis: 38px;
-    width: 38px;
-    height: 38px;
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+  }
+
+  .agenda-sidebar-item {
+    padding: 12px;
   }
 
   .agenda-mobile-content {
-    padding: 20px;
+    padding: 16px;
   }
 
   .agenda-mobile-content h2 {
     font-size: 16px;
   }
-}
 
+  .agenda-mobile-content p {
+    font-size: 12px;
+  }
+}
 /* =========================================================
    VENUE PAGE
 ========================================================= */
@@ -16726,10 +16716,300 @@ s .dialogues-badge-mark {
   }
 
   .venue-information {
-    padding: 32px 20px 36px;
+    padding: 31px 20px 36px;
   }
 
   .venue-name-row {
+    flex-direction: column;
+  }
+}
+
+/* Cookie Consent Banner */
+.cookie-consent-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  width: 100%;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(100%);
+
+  transition:
+    opacity 350ms ease,
+    transform 350ms ease,
+    visibility 350ms ease;
+}
+
+.cookie-consent-banner--visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.cookie-consent-card {
+  width: 100%;
+  max-width: 100%;
+  min-height: 180px; /* Increase overall banner height */
+  padding: 36px 48px; /* More top & bottom spacing */
+
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.08);
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 40px;
+}
+
+.cookie-consent-header {
+  display: none;
+}
+
+.cookie-consent-body {
+  margin: 0;
+  max-width: 850px;
+  display: block;
+  font-size: 15px;
+  line-height: 1.65;
+  color: #4b5563;
+}
+
+.cookie-consent-body p {
+  margin: 0;
+  display: inline;
+}
+
+.cookie-consent-body p + p::before {
+  content: ' ';
+}
+
+.cookie-consent-link {
+  font-weight: 800;
+  color: #8e0101;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.cookie-consent-link:hover {
+  color: #640000;
+}
+
+.cookie-consent-preferences {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 18px 0 0;
+  border-top: 1px solid #e5e7eb;
+}
+
+.cookie-consent-preferences-label {
+  margin: 0 0 12px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #8e0101;
+}
+
+.cookie-consent-preference-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.cookie-consent-preference-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+}
+
+.cookie-consent-preference-title {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 800;
+  color: #111827;
+}
+
+.cookie-consent-preference-text {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #64748b;
+}
+
+.cookie-consent-badge {
+  white-space: nowrap;
+  height: fit-content;
+  font-size: 11px;
+  font-weight: 800;
+  color: #64748b;
+  background: #e2e8f0;
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+.cookie-consent-checkbox {
+  width: 18px;
+  height: 18px;
+  margin-top: 4px;
+  accent-color: #8e0101;
+  cursor: pointer;
+}
+
+.cookie-consent-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+
+.cookie-consent-button {
+  min-width: 138px;
+  min-height: 42px;
+  padding: 10px 18px;
+
+  border-radius: 6px;
+  border: 1px solid #8e0101;
+  background: #ffffff;
+  color: #8e0101;
+
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  white-space: nowrap;
+
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease;
+}
+
+.cookie-consent-button:hover {
+  transform: translateY(-1px);
+}
+
+.cookie-consent-button:active {
+  transform: scale(0.96);
+}
+
+.cookie-consent-button--primary {
+  background: #8e0101;
+  color: #ffffff;
+  border-color: #8e0101;
+}
+
+.cookie-consent-button--primary:hover {
+  background: #640000;
+  border-color: #640000;
+}
+
+.cookie-consent-button--secondary {
+  background: #ffffff;
+  color: #8e0101;
+  border-color: #8e0101;
+}
+
+.cookie-consent-button--secondary:hover {
+  background: #f5eeee;
+}
+
+.cookie-consent-button--ghost {
+  background: transparent;
+  color: #475569;
+  border-color: transparent;
+}
+
+.cookie-consent-button--ghost:hover {
+  color: #8e0101;
+  background: #f5eeee;
+}
+
+.cookie-consent-button--dark {
+  background: #111827;
+  border-color: #111827;
+  color: #ffffff;
+}
+
+.cookie-consent-button--dark:hover {
+  background: #000000;
+}
+
+.cookie-consent-settings-icon {
+  width: 16px;
+  height: 16px;
+  color: currentColor;
+}
+
+@media (max-width: 1024px) {
+  .cookie-consent-card {
+    padding: 22px 24px;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .cookie-consent-body {
+    max-width: 100%;
+  }
+
+  .cookie-consent-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .cookie-consent-card {
+    padding: 18px 16px;
+  }
+
+  .cookie-consent-body {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .cookie-consent-body p {
+    display: block;
+    margin-bottom: 7px;
+  }
+
+  .cookie-consent-body p + p::before {
+    content: '';
+  }
+
+  .cookie-consent-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .cookie-consent-button {
+    width: 100%;
+    min-width: 0;
+    min-height: 48;
+  }
+
+  .cookie-consent-preference-list {
+    grid-template-columns: 1fr;
+  }
+
+  .cookie-consent-preference-item {
     flex-direction: column;
   }
 }
