@@ -36,7 +36,8 @@ export default function Footer() {
         });
       }
     } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : 'An error occurred. Please try again.';
+      const errorMessage =
+        error instanceof Error ? error.message : 'An error occurred. Please try again.';
       setMessage({ type: 'error', text: errorMessage });
     } finally {
       setLoading(false);

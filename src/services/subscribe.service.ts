@@ -83,15 +83,12 @@ export async function subscribeToNewsletter(email: string): Promise<SubscribeRes
           email,
         };
 
-        const response = await apiFetch<SubscribeResponse>(
-          API_ENDPOINTS.WEBSITE.SUBSCRIBES,
-          {
-            method: 'POST',
-            requireAuth: false,
-            headers: buildWebsiteAuthHeaders(freshAuth),
-            body: JSON.stringify(payload),
-          },
-        );
+        const response = await apiFetch<SubscribeResponse>(API_ENDPOINTS.WEBSITE.SUBSCRIBES, {
+          method: 'POST',
+          requireAuth: false,
+          headers: buildWebsiteAuthHeaders(freshAuth),
+          body: JSON.stringify(payload),
+        });
 
         return response;
       } catch (retryError) {
